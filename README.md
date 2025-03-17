@@ -1,6 +1,6 @@
 # fuzzy-aggregation
 Este es el repositorio asociado a mi Trabajo de Fin de Grado (TFG) sobre la agregación de números borrosos discretos.
-El archivo `fuzzy_aggregation.py` contiene la clase DiscreteFuzzyNumber las funciones necesarias para realizar la agregación de dos números borrosos discretos mediante dos métodos principales junto con algunos ejemplos de uso.
+El archivo `tfg.py` contiene la clase DiscreteFuzzyNumber las funciones necesarias para realizar la agregación de dos números borrosos discretos mediante dos métodos principales junto con algunos ejemplos de uso.
 
 El primero se basa en el artículo de *Aggregation of subjective evaluations based on
 discrete fuzzy numbers* de Riera y Torrens. El método agrega dos números borrosos *A* y *B* de la siguiente manera:
