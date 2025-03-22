@@ -237,10 +237,10 @@ class DiscreteFuzzyNumber:
       return sorted_fuzzy_objects
 
 
-    def pos(self,n, m, order_type='lex1'):
+    def pos(self,n, m, order_type='lex1',y=None):
 
     # Ordena todos los posible números borrosos en A^{L_nxY_m}
-      sorted_fuzzy_numbers = DiscreteFuzzyNumber.all_dfns(n, m, order_type)
+      sorted_fuzzy_numbers = DiscreteFuzzyNumber.all_dfns(n, m, order_type,y)
 
     # Encuentra la posición del número borroso dado en la lista
       for idx, fuzzy in enumerate(sorted_fuzzy_numbers):
@@ -248,12 +248,12 @@ class DiscreteFuzzyNumber:
             return idx
       return -1
     @staticmethod
-    def pos_inverse(z, n, m, order_type='lex1'):
-      sorted_fuzzy_numbers = DiscreteFuzzyNumber.all_dfns(n, m, order_type)
+    def pos_inverse(z, n, m, order_type='lex1',y=None):
+      sorted_fuzzy_numbers = DiscreteFuzzyNumber.all_dfns(n, m, order_type,y)
       return sorted_fuzzy_numbers[z]
 
-    def aggregation(self, other,f,n,m,order_type='lex1'):
-       sorted_fuzzy_numbers = DiscreteFuzzyNumber.all_dfns(n, m, order_type)
+    def aggregation(self, other,f,n,m,order_type='lex1',y=None):
+       sorted_fuzzy_numbers = DiscreteFuzzyNumber.all_dfns(n, m, order_type, y)
 
     # Buscamos la posición de self en la lista ordenada
        pos_self = next((idx for idx, fuzzy in enumerate(sorted_fuzzy_numbers) if fuzzy.is_equal(self)), -1)
