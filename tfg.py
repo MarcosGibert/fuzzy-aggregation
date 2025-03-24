@@ -225,16 +225,15 @@ class DiscreteFuzzyNumber:
             generated_dfns.append(row + [1] * (n+1 - j))
       generated_dfns.append([1] * (n+1))
 
-    # Eliminar duplicados
+    # Eliminar duplicados y vuelve a convertir a lista
       unique_dfns = list(map(list, set(map(tuple, generated_dfns))))
-
-      # Convertir cada sublista en un objeto DiscreteFuzzyNumber (usando índices como llaves)
-      fuzzy_objects = [DiscreteFuzzyNumber({indice: valor for indice, valor in enumerate(sublista)})
-                     for sublista in unique_dfns]
-
-    # Ordenar la lista usando merge_sort según el orden deseado
+      dfns = [{indice: valor for indice, valor in enumerate(sublista)} for sublista in unique_dfns]
+      # Ordenar la lista usando merge_sort según el orden deseado
+      fuzzy_objects=[DiscreteFuzzyNumber(i) for i in dfns]
       sorted_fuzzy_objects = DiscreteFuzzyNumber.merge_sort(fuzzy_objects, order_type)
       return sorted_fuzzy_objects
+   
+
 
 
     def pos(self,n, m, order_type='lex1',y=None):
