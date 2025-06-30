@@ -268,8 +268,10 @@ class DiscreteFuzzyNumber:
 
 
     def __repr__(self):
-        ordered_elements = dict(sorted(self.elements.items()))
-        return f"{ordered_elements}"
+        sorted_items = sorted(self.elements.items())
+        # Creamos los pares v/k solo si v ≠ 0
+        pairs = [f"{v}/{k}" for k, v in sorted_items if v != 0.0]
+        return "{" + ", ".join(pairs) + "}"
 
 #Probamos el ejemplo del artículo "Aggregation of subjective evaluations based on
 #discrete fuzzy numbers" de Riera y Torrens.
